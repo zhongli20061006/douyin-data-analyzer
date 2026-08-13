@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pymysql
+pandas
+openpyxl
+pydantic

@@ -1,0 +1,39 @@
+/* 设计令牌（单一视觉系统入口，禁止页面自行发明颜色/间距） */
+:root {
+  --spider-bg: #14171c;
+  --spider-surface: #1d2128;
+  --spider-border: #2d323a;
+  --spider-text: #e5e7eb;
+  --spider-text-secondary: #9ca3af;
+  --spider-success: #67c23a;
+  --spider-warning: #e6a23c;
+  --spider-danger: #f56c6c;
+  --spider-info: #909399;
+  --radius-md: 8px;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --space-page: 24px;
+  --space-section: 16px;
+  --space-card: 12px;
+}
+
+/* Element Plus 深色主题：显式覆盖核心变量，保证所有组件统一深色 */
+html.dark {
+  --el-bg-color: var(--spider-bg);
+  --el-bg-color-overlay: var(--spider-surface);
+  --el-bg-color-page: var(--spider-bg);
+  --el-fill-color-blank: var(--spider-surface);
+  --el-fill-color-light: #262b33;
+  --el-border-color: var(--spider-border);
+  --el-border-color-light: var(--spider-border);
+  --el-border-color-lighter: #383e47;
+  --el-text-color-primary: var(--spider-text);
+  --el-text-color-regular: var(--spider-text-secondary);
+  --el-color-primary: #409eff;
+}
+
+body {
+  margin: 0;
+  background: var(--spider-bg);
+  color: var(--spider-text);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}

@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# IDE
+.idea/*
+!.idea/runConfigurations/
+.vscode/
+*.swp
+
+# Logs
+*.log
+douyin_spider.log
+backend.log
+spider_output.log
+
+# Runtime
+backend.pid
+
+# Scraped data / debug
+*.html
+!frontend/*.html
+douyinpage*.html
+video_ids.txt
+dump.rdb
+dump.rdb.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+local_config.py
+
+# Test artifacts
+.pytest_cache/
+pytest-cache-files-*/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/*.local
+
+# 浏览器插件
+extension/node_modules/
+!extension/**/*.html
+
+# 生成的文档产物（源码 generate_doc.py 保留）
+*.docx
+
+# 开源发布产物
+release/

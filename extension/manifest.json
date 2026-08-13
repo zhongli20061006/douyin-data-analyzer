@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "抖音个人视频数据分析器",
+  "version": "0.1.0",
+  "description": "采集自己抖音主页视频的播放量与详情页互动（点赞/评论/分享/收藏）数据，上报到自己的后端。只能采集自己的数据。",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://www.douyin.com/*",
+    "http://127.0.0.1:8001/*",
+    "http://localhost:8001/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.douyin.com/*"],
+      "js": ["content/hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.douyin.com/*"],
+      "js": ["content/parse.js", "content/collect.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "抖音个人视频数据分析器 - 设置",
+    "default_popup": "options/options.html"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  }
+}

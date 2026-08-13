@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>抖音个人视频数据分析器 - 设置</title>
+<style>
+  body { font-family: system-ui, -apple-system, 'Microsoft YaHei', sans-serif; padding: 16px; width: 320px; }
+  label { display: block; margin-bottom: 6px; font-size: 13px; color: #333; }
+  input { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid #ccc; border-radius: 4px; }
+  .row { margin-bottom: 12px; }
+  button { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; }
+  #save { background: #409eff; color: #fff; }
+  #reset { background: #eee; color: #333; margin-left: 8px; }
+  #status { margin-top: 8px; font-size: 12px; color: #67c23a; min-height: 16px; }
+  .hint { font-size: 12px; color: #888; margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <label for="backend">后端地址</label>
+    <input id="backend" type="text" placeholder="http://127.0.0.1:8001" />
+    <div class="hint">默认本机后端；局域网/远端示例：http://192.168.1.10:8001</div>
+  </div>
+  <div class="row">
+    <label for="mode">采集模式</label>
+    <select id="mode">
+      <option value="unlimited">无限制（本地版，可采集任意主页）</option>
+      <option value="limited">仅自己（开源版，合规限制）</option>
+    </select>
+    <div class="hint">无限制仅用于本地开发与对照，请勿将他人主页数据公开或商用。</div>
+  </div>
+  <div class="row">
+    <label for="token">API 令牌</label>
+    <input id="token" type="text" placeholder="与 local_config.py 的 EXTENSION_API_TOKEN 一致" />
+    <div class="hint">后端已启用鉴权：令牌不匹配或未配置时采集上报会被拒绝。</div>
+  </div>
+  <button id="save">保存</button>
+  <button id="reset">恢复默认</button>
+  <div id="status"></div>
+  <script src="options.js"></script>
+</body>
+</html>

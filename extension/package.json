@@ -1,0 +1,12 @@
+{
+  "name": "douyin-personal-analyzer-extension",
+  "private": true,
+  "version": "0.1.0",
+  "description": "抖音个人视频数据分析器插件（源码 + Node 测试依赖）",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}
